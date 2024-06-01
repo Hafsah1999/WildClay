@@ -1,0 +1,126 @@
+/* @import url(https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css);
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap"); */
+
+.bg-img-home-1{
+    background-image: url(https://skutt.com/images/potter-wheel-header-2.jpg);
+      background-size:cover ;
+      height: 70vh;
+    }
+    .bg-img-home-2{
+      background-image: url(https://www.itokri.com/cdn/shop/articles/header6_1_800x800.jpg?v=1678788409);
+        background-size:cover ;
+        height: 70vh;
+      }
+      .bg-img-home-3{
+        background-image: url(https://cla.umn.edu/sites/cla.umn.edu/files/styles/feature_slider_image_style/public/ceramics_classes_2_0.jpg?itok=6NRrQDlF);
+          background-size:cover ;
+          height: 70vh;
+          
+        }
+        .bg-img-home-4{
+          background-image: url(https://www.azuremagazine.com/wp-content/uploads/2023/08/Azure-Ceramics-Roundup-Hero.jpg);
+       
+            background-size:cover ;
+            height: 70vh;
+          }
+       
+    .bg-img-login{
+       /* background-image: url(https://wallpapers.com/images/hd/deep-blue-sea-bright-background-4ywoltna1j6fqpka.jpg); */
+      background-size:cover ;
+      height: 100vh;
+    background-image: linear-gradient(to right,rgb(24, 67, 122),lightblue,rgb(24, 67, 122));
+    }
+    .input-login{
+      
+      border: 1px solid black;
+    }
+    
+    .input-login::placeholder{
+    
+      font-family: cursive;
+      font-size: 20px;
+    
+    }
+    .text-categories{
+      font-family: 'Courier New', Courier, monospace;
+      font-weight: bold;
+      color: #264653;
+    }
+    .bg-img-contact{
+      background-image: url("https://www.idfreshfood.com/wp-content/uploads/2017/09/contact_us_2.jpg");
+      background-size: cover;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+    
+    }
+    .contact-card-1{
+      height: 500px;
+      border: none;
+      margin-left: 160px;
+    }
+    .input-contact::placeholder{
+    font-family: cursive;
+    }
+    .img-about-swiper {
+      display: block;
+      margin: auto;
+      width: 150px;
+      height: 100px;
+      border-radius: 10px;
+    }
+    .img-about-swiper:hover{
+      width: 170px;
+      height: 120px;
+      border-radius: 20px;
+    
+    }
+    .about-swiper-1 {
+      margin-bottom: 50px;
+      border: none;
+      margin-top: 20px;
+    }
+    .about-text:hover {
+    
+      font-size: 50px;
+      text-shadow:0px 0px 1px grey,0px 2px grey;
+    }
+    .about-text{
+      color:rgb(24, 67, 122);
+    }
+    .name {
+      color: rgb(24, 67, 122);
+      font-size: 25px;
+      font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    }
+    .name:hover {
+      font-size: 30px;
+      text-shadow: 0px 0px 5px lightblue, 0px 0px 10px lightblue, 0px 0px 15px rgb(24, 67, 122),
+        0px 0px 20px rgb(24, 67, 122), 0px 0px 25px rgb(24, 67, 122);
+    }
+    .Category{
+      color: brown;
+      font-size: larger;
+      font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    .Category:hover{
+      background-color: brown;
+      color: white;
+      border-radius: 7px;
+    }
+   
+    .Category-1{
+      background-color: brown;
+      color: white;
+      border-radius: 7px;
+      font-size: larger;
+      font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    .bg-img-about-1{
+      background-image: url();
+      background-size: cover;
+      height: 100vh;
+    }
+  
+
