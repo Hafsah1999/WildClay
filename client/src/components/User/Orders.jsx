@@ -27,20 +27,21 @@ const OrderHistory = () => {
     <Container>
       <h1 className="text-center my-5 font-serif text-2xl text-orange-900">Order History</h1>
 
-      <div className="p-4 shadow-lg">
+      <div className="m-5 p-8 bg-orange-100 shadow-lg">
         {loading ? (
           <Spinner animation="border" />
         ) : (
           paymentData.map((order, index) => (
             <Row key={order._id} className="mb-4">
               <Col sm={6}>
-                <p className="text-muted">Shipping Address</p>
+                <p className="text-orange-800 text-xl font-serif">Shipping Address</p>
                 <p>{order.shipping.name}</p>
                 <p>{order.shipping.address.line1}</p>
                 <p>{order.shipping.address.postal_code}</p>
               </Col>
+              <hr className='my-3 border-orange-200' />
               <Col sm={6}>
-                <p className="text-muted">Order Details</p>
+                <p className="text-orange-800 text-xl font-serif">Order Details</p>
                 <p>Order ID: {order._id}</p>
                 <p>Amount: ₹{order.details.amount/100}</p>
                 <p>Payment Status: {order.paymentStatus}</p>
