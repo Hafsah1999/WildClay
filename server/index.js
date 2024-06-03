@@ -9,6 +9,7 @@ const contactRouter = require('./Routers/contactRouter');
 const userRouter = require('./Routers/userRouter');
 const productRouter = require('./Routers/productRouter');
 const utilRouter = require('./Routers/Utils');
+const orderRouter = require('./Routers/orderRouter');
 const stripe = require('stripe')('sk_test_51OfemmSAfzZtNsjP4i4NDmJLu0PdgEFyMhNsU0FK8o9PhUqw9byqqkw8PMjxYktyqeyAYEnmqbB4SX0YA3VGusA800cm1C368f');
 
 app.use(express.static('./uploads'));
@@ -23,6 +24,7 @@ app.use('/contact', contactRouter)
 app.use('/user', userRouter)
 app.use('/product', productRouter)
 app.use('/util', utilRouter)
+app.use('/order', orderRouter)
 
 app.use(express.static('./uploads'));
 

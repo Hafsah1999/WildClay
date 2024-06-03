@@ -32,9 +32,13 @@ const Navbar = () => {
   const showLoggedin = () => {
     if (loggedIn) {
       return (
-        
+        <>
+        <div className="flex">
+          <Link to="/User/Order"> <p className="px-2 font-serif text-orange-900">Orders</p></Link> 
         <button onClick={logout}>
           <TbLogout className='text-2xl text-gray-600' /></button>
+          </div>
+          </>
       );
     } else {
       return <div className=" ">
@@ -45,9 +49,6 @@ const Navbar = () => {
       </div>
     }
   }
-
-
-
 
   return (
     <>
@@ -86,7 +87,7 @@ const Navbar = () => {
 
 
                 <li className="ml-2 lg:ml-4 relative inline-block">
-                  <Link className="" to="/User/cart">
+                  <Link className="" to="/cart">
                     <div className="absolute -top-1 right-0 z-10 bg-yellow-400 text-xs font-bold px-1 py-0.5 rounded-sm">
                       {cartItems.length}
                     </div>

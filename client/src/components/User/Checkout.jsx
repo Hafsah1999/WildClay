@@ -58,234 +58,93 @@ function Checkout() {
     };
 
     return (
-
-        <div className="relative mx-auto w-full bg-white">
-            <div className="grid min-h-screen grid-cols-10">
-                <div className="col-span-full py-6 px-4 sm:py-12 lg:col-span-6 lg:py-24">
-                    <div className="mx-auto w-full max-w-lg">
-                        <h1 className="relative text-2xl font-medium text-gray-700 sm:text-3xl">
-                            Secure Checkout
-                            <span className="mt-2 block h-1 w-10 bg-orange-800 sm:w-20" />
-                        </h1>
-                    
-                    <p className='text-lg my-4 font-semibold text-orange-900'>Delivery Address</p>
+        <Container>
+            <Card>
+                <Card.Body>
                     <hr />
-                    <form className='mt-4'>
-                    
-                            <p>Pin Code</p>
-                            <input ref={pincodeRef} type="number" className='w-full my-3' maxLength={6} minLength={6} />
-                       
-                            <p>Contact</p>
-                            <input ref={contactRef} className='w-full my-3' type="text" maxLength={10} />
-                        
-                      
-                            <p>Shipping Address</p>
-                            <textarea ref={addressRef} className='w-full my-3' style={{border:"1px solid gray"}} as="textarea" rows={3} />
-                    
-                        <Button  type="submit"
-                            className="mt-4 inline-flex w-full items-center justify-center rounded bg-orange-800 py-2.5 px-4 text-base font-semibold tracking-wide text-white text-opacity-80 outline-none ring-offset-2 transition hover:text-opacity-100 focus:ring-2 focus:ring-orange-500 sm:text-lg" variant="primary" onClick={getPaymentIntent}>Proceed to Pay</Button>
-                    </form>
-             
-
-                {clientSecret && (
-                <Elements stripe={stripePromise} options={{
-                    clientSecret,
-                    appearance
-                }}>
-                    <PaymentGateway />
-                </Elements>
-            )}
-                        {/* <form action="" className="mt-10 flex flex-col space-y-4">
-                            <div>
-                                <label
-                                    htmlFor="email"
-                                    className="text-xs font-semibold text-gray-500"
-                                >
-                                    Email
-                                </label>
-                                <input
-                                    type="email"
-                                    id="email"
-                                    name="email"
-                                    placeholder="john.capler@fang.com"
-                                    className="mt-1 block w-full rounded border-gray-300 bg-gray-50 py-3 px-4 text-sm placeholder-gray-300 shadow-sm outline-none transition focus:ring-2 focus:ring-orange-500"
-                                />
-                            </div>
-                            <div className="relative">
-                                <label
-                                    htmlFor="card-number"
-                                    className="text-xs font-semibold text-gray-500"
-                                >
-                                    Card number
-                                </label>
-                                <input
-                                    type="text"
-                                    id="card-number"
-                                    name="card-number"
-                                    placeholder="1234-5678-XXXX-XXXX"
-                                    className="block w-full rounded border-gray-300 bg-gray-50 py-3 px-4 pr-10 text-sm placeholder-gray-300 shadow-sm outline-none transition focus:ring-2 focus:ring-orange-500"
-                                />
-                                <img
-                                    src="/images/uQUFIfCYVYcLK0qVJF5Yw.png"
-                                    alt=""
-                                    className="absolute bottom-3 right-3 max-h-4"
-                                />
-                            </div>
-                            <div>
-                                <p className="text-xs font-semibold text-gray-500">
-                                    Expiration date
-                                </p>
-                                <div className="mr-6 flex flex-wrap">
-                                    <div className="my-1">
-                                        <label htmlFor="month" className="sr-only">
-                                            Select expiration month
-                                        </label>
-                                        <select
-                                            name="month"
-                                            id="month"
-                                            className="cursor-pointer rounded border-gray-300 bg-gray-50 py-3 px-2 text-sm shadow-sm outline-none transition focus:ring-2 focus:ring-orange-500"
-                                        >
-                                            <option value="">Month</option>
-                                        </select>
-                                    </div>
-                                    <div className="my-1 ml-3 mr-6">
-                                        <label htmlFor="year" className="sr-only">
-                                            Select expiration year
-                                        </label>
-                                        <select
-                                            name="year"
-                                            id="year"
-                                            className="cursor-pointer rounded border-gray-300 bg-gray-50 py-3 px-2 text-sm shadow-sm outline-none transition focus:ring-2 focus:ring-orange-500"
-                                        >
-                                            <option value="">Year</option>
-                                        </select>
-                                    </div>
-                                    <div className="relative my-1">
-                                        <label htmlFor="security-code" className="sr-only">
-                                            Security code
-                                        </label>
-                                        <input
-                                            type="text"
-                                            id="security-code"
-                                            name="security-code"
-                                            placeholder="Security code"
-                                            className="block w-36 rounded border-gray-300 bg-gray-50 py-3 px-4 text-sm placeholder-gray-300 shadow-sm outline-none transition focus:ring-2 focus:ring-orange-500"
-                                        />
-                                    </div>
-                                </div>
-                            </div>
-                            <div>
-                                <label htmlFor="card-name" className="sr-only">
-                                    Card name
-                                </label>
-                                <input
-                                    type="text"
-                                    id="card-name"
-                                    name="card-name"
-                                    placeholder="Name on the card"
-                                    className="mt-1 block w-full rounded border-gray-300 bg-gray-50 py-3 px-4 text-sm placeholder-gray-300 shadow-sm outline-none transition focus:ring-2 focus:ring-orange-500"
-                                />
-                            </div>
-                        </form> */}
-                    </div>
-                </div>
-                <div className="relative col-span-full flex flex-col py-6 pl-8 pr-4 sm:py-12 lg:col-span-4 lg:py-24">
-                    <h2 className="sr-only">Order summary</h2>
-                    <div>
-                        <img
-                            src="https://images.unsplash.com/photo-1581318694548-0fb6e47fe59b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
-                            alt=""
-                            className="absolute inset-0 h-full w-full object-cover"
-                        />
-                        <div className="absolute inset-0 h-full w-full bg-gradient-to-t from-orange-600 to-orange-900 opacity-95" />
-                    </div>
                     {cartItems.map(item => (
                         <div key={item.id}>
-                            <div className="relative ">
-                                <ul className="space-y-5">
-                                    <li className="flex justify-between">
-                                        <div className="inline-flex">
-                                            <img src={'http://localhost:5000/' + item.image} alt="" className="w-auto mx-auto  h-24  py-1 " style={{ objectFit: "cover" }} />
+                            <div className="font-sans bg-orange-100">
+                                <div className="flex max-sm:flex-col gap-4 h-full">
+                                    <div className="bg-gradient-to-r from-orange-800 via-orange-700 to-orange-800 sm:h-screen sm:sticky sm:top-0 lg:min-w-[350px] sm:min-w-[300px]">
+                                        <div className="relative h-full">
+                                            <div className="p-4 sm:overflow-auto sm:h-[calc(100vh-60px)]">
+                                                <div className="space-y-4">
+                                                    <div className="flex items-start gap-4">
+                                                        <div className="w-24 h-20 max-lg:w-24 max-lg:h-24 flex p-2 shrink-0 bg-orange-300 rounded-md">
+                                                            <img
+                                                                src={'http://localhost:5000/' + item.image}
+                                                                className="w-full object-contain"
+                                                            />
+                                                        </div>
+                                                        <div className="w-full">
+                                                            <h3 className="text-base text-white">{item.pname}</h3>
+                                                            <ul className="text-xs text-orange-300 space-y-1 mt-2">
+                                                                <li className="flex flex-wrap gap-4">
+                                                                    Category <span className="ml-auto">{item.pcategory}</span>
 
-                                            <div className="ml-3">
-                                                <p className="text-base font-semibold text-white">
-                                                    {item.pname}
-                                                </p>
-                                                <p className="text-sm font-medium text-white text-opacity-80">
-                                                    {item.pcategory}
-                                                </p>
+                                                                </li>
+
+                                                                <li className="flex flex-wrap gap-4">
+                                                                    Price <span className="ml-auto">{item.pprice}</span>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div className="md:absolute md:left-0 md:bottom-0 bg-orange-800 w-full p-4">
+                                                <h4 className="flex flex-wrap gap-4 text-base text-white">
+
+                                                    Items <span className="ml-auto">{getCartItemsCount()}</span>
+                                                    Total Price <span className="ml-auto">{getCartTotal()}</span>
+                                                </h4>
                                             </div>
                                         </div>
-                                        <p className="text-sm font-semibold text-white">₹{item.pprice}</p>
-                                    </li>
-
-                                </ul>
-                                <div className="my-5 h-0.5 w-full bg-white bg-opacity-30" />
-                                <div className="space-y-2">
-                                    <p className="flex justify-between text-lg font-bold text-white">
-                                        <span>Total price:</span>
-                                        <span>{getCartTotal()}</span>
-                                    </p>
-                                    <p className="flex justify-between text-sm font-medium text-white">
-                                        <span>Total items:</span>
-                                        <span>{getCartItemsCount()}</span>
-                                    </p>
+                                    </div>
+                                    <div className="max-w-4xl mx-auto w-full h-max rounded-md p-4 sticky top-0">
+                                        <Card.Body>
+                                            <Card.Title className='text-lg text-orange-900 font-semibold'>Delivery Address</Card.Title>
+                                            <hr />
+                                            <Form>
+                                                <FormGroup className='mt-8'>
+                                                    <FormLabel className='text-md font-serif' >Pin Code</FormLabel><br />
+                                                    <Form.Control ref={pincodeRef} type="number" maxLength={6} minLength={6} />
+                                                </FormGroup>
+                                                <FormGroup className='my-4'>
+                                                    <FormLabel className='font-serif'>Contact</FormLabel> <br />
+                                                    <Form.Control ref={contactRef} type="text" maxLength={10} />
+                                                </FormGroup>
+                                                <FormGroup className='mb-5'>
+                                                    <FormLabel className='font-serif'>Shipping Address</FormLabel> <br />
+                                                    <Form.Control ref={addressRef} style={{ border: "1px solid black" }} as="textarea" className='w-full' rows={4} />
+                                                </FormGroup>
+                                                <Button className='bg-orange-900 text-white py-1 px-8 rounded-lg font-serif block mx-auto' variant="primary" onClick={getPaymentIntent}>Pay Now</Button>
+                                            </Form>
+                                        </Card.Body>
+                                    </div>
                                 </div>
                             </div>
+
                         </div>
                     ))}
-                    <div className="relative mt-10 text-white">
-                        <h3 className="mb-5 text-lg font-bold">Support</h3>
-                        <p className="text-sm font-semibold">
-                            +01 653 235 211 <span className="font-light">(International)</span>
-                        </p>
-                        <p className="mt-1 text-sm font-semibold">
-                            support@nanohair.com <span className="font-light">(Email)</span>
-                        </p>
-                        <p className="mt-2 text-xs font-medium">
-                            Call us now for payment related issues
-                        </p>
-                    </div>
-                    <div className="relative mt-10 flex">
-                        <p className="flex flex-col">
-                            <span className="text-sm font-bold text-white">
-                                Money Back Guarantee
-                            </span>
-                            <span className="text-xs font-medium text-white">
-                                within 30 days of purchase
-                            </span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
+                </Card.Body>
 
 
-        // <Container>
-        //     <Card>
-        //         <Card.Body>
-        //             <Card.Title>Product Details</Card.Title>
-        //             <hr />
-        //             {cartItems.map(item => (
-        //                 <div key={item.id}>
-        //                     {/* <img src={`${process.env.NEXT_PUBLIC_API_URL}/${item.image[0]}`} alt={item.name} width={50} /> */}
-        //                     <div>
-        //                         <p>{item.pname}</p>
-        //                         <p>Items : {getCartItemsCount()}</p>
-        //                     </div>
-        //                     <div>
-        //                         <p>Total : ₹{getCartTotal()}</p>
-        //                     </div>
-        //                 </div>
-        //             ))}
-        //         </Card.Body>
-        //     </Card>
-        //     <Card>
-               
-        //     </Card>
 
-           
-        // </Container>
+
+                {clientSecret && (
+                    <Elements stripe={stripePromise} options={{
+                        clientSecret,
+                        appearance
+                    }}>
+                        <PaymentGateway />
+                    </Elements>
+                )}
+            </Card>
+
+        </Container>
     );
 }
 

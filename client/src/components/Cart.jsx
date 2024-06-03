@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import useVoiceContext from '../../Context/voiceContext';
-import useCartContext from '../../Context/cartContext';
 import { Link } from 'react-router-dom';
+import useVoiceContext from '../Context/voiceContext';
+import useCartContext from '../Context/cartContext';
 
 const Cart = () => {
 

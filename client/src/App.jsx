@@ -4,7 +4,6 @@ import { Toaster } from 'react-hot-toast'
 // import Header from './components/Header'
 import Addproduct from './components/Admin/AddProduct'
 // import Dashboard from './components/Admin/Dashboard'
-import CartDetails from './components/User/Cart'
 import Decoration from './components/Main/Decoration'
 import Footer from './components/Footer'
 import Product from './components/Main/Product'
@@ -26,15 +25,19 @@ import { AppProvider } from './Context/AppContext'
 import ManageProduct from './components/Admin/ManageProduct'
 
 import Dashboard from './components/Admin/Dashboard'
-import { CartProvider } from './Context/cartContext'
 import Main from './components/Main/Index'
 import { SnackbarProvider } from 'notistack'
 import { VoiceProvider } from './Context/voiceContext'
 import User from './components/User/Index'
-import Cart from './components/User/Cart'
 import Profile from './components/User/Profile'
 import ManageUser from './components/Admin/ManageUser'
 import Checkout from './components/User/Checkout'
+import ThankYou from './components/User/Thankyou'
+import OrderHistory from './components/User/Orders'
+import { CartProvider } from './Context/CartContext'
+import AdminAuth from './Auth/Adminauth'
+import UserAuth from './Auth/Userauth'
+import Cart from './components/Cart'
 // import Dashboard from '../components/Admin/Dashboard'
 
 
@@ -52,8 +55,8 @@ const App = () => {
 
                 <Routes >
                   <Route path="/" element={<Home />} />
-                  <Route path="/CartDetails" element={<CartDetails />} />
 
+                  <Route path="/cart" element={<Cart />} />
 
                   <Route path="/About" element={<About />} />
                   <Route path="/Decoration" element={<Decoration />} />
@@ -63,7 +66,7 @@ const App = () => {
                   <Route path="/Utensil" element={<Utensil />} />
                   <Route path="/WaterContainer" element={<Watercontainer />} />
 
-                  <Route path="/Admin" element={<Main />}>
+                  <Route path="/Admin" element={<AdminAuth><Main /></AdminAuth>}>
                     <Route path='ManageProduct' element={<ManageProduct />} />
                     <Route path='Dashboard' element={<Dashboard />} />
                     <Route path='manageProduct' element={<ManageProduct />} />
@@ -83,10 +86,13 @@ const App = () => {
 
                   </Route>
 
-                  <Route path="/User" element={<User />}>
-                    <Route path="cart" element={<Cart />} />
+                  <Route path="/User" element={<UserAuth><User /></UserAuth>}>
                     <Route path="Profile" element={<Profile />} />
                     <Route path="Checkout" element={<Checkout />} />
+                <Route path="thankyou" element={<ThankYou />} />
+                <Route path="Order" element={<OrderHistory />} />
+
+
                   </Route>
 
                   <Route path="/Contact" element={<Contact />} />
